@@ -29,8 +29,8 @@ Abra o seu terminal (Git Bash) e execute os comandos abaixo. Vamos criar nossas 
 
 ```bash
 # Criando a pasta de trabalho (origem) e a pasta da "nuvem" (destino)
-mkdir -p /c/Projetos_Aula
-mkdir -p /c/Nuvem_Drive
+mkdir -p ~/Projetos_Aula
+mkdir -p ~/Nuvem_Drive
 
 # Criando arquivos simulados de teste
 echo "<h1>Meu site incrivel</h1>" > /c/Projetos_Aula/index.html
