@@ -1,6 +1,3 @@
-Aqui está a estrutura em Markdown, pronta para você copiar e colar no `README.md` do repositório da turma no GitHub. O texto foi formatado para ser visualmente atraente, utilizando ícones e formatação de código nativa do GitHub.
-
-```markdown
 # 🛡️ Laboratório Prático: Automação de Backup em Nuvem com BASH
 
 Bem-vindos ao laboratório de **Gerenciamento de Arquivos e Nuvem**! ☁️📂
