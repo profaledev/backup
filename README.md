@@ -48,7 +48,7 @@ Utilize um editor de código (como o VS Code) ou o editor nativo do terminal (co
 
 ```bash
 #!/bin/bash
-# Sistema de Backup em Nuvem (Gerando .zip)
+# Sistema de Backup em Nuvem
 
 echo "=========================================="
 echo "   INICIANDO BACKUP PARA A NUVEM"
@@ -57,27 +57,24 @@ echo ""
 
 # 1. Capturando a data atual (Formato AAAA-MM-DD)
 DATA=$(date +%Y-%m-%d)
-NOME_ARQUIVO="backup_$DATA.zip" 
+NOME_ARQUIVO="backup_$DATA.tar.gz"
 
-# 2. Definindo os caminhos (PATHs absolutos apontando para o disco C)
-ORIGEM="/c/Projetos_Aula"
-DESTINO="/c/Nuvem_Drive/$NOME_ARQUIVO"
+# 2. Definindo os caminhos (PATHs)
+# Utilizamos o $HOME para garantir que funcione em qualquer usuario
+ORIGEM="$HOME/Projetos_Aula"
+DESTINO="$HOME/Nuvem_Drive/$NOME_ARQUIVO"
 
-# 3. Executando a compactação em ZIP
+# 3. Executando a compactacao
+# -c (create), -z (gzip/comprime), -f (file/nome do arquivo)
+# -C (muda para o diretorio de origem antes de zipar, evitando pastas vazias)
 echo "Compactando arquivos da pasta $ORIGEM..."
-
-# Entrando na pasta de origem para evitar a criação de árvores de pastas vazias no .zip
-cd "$ORIGEM" || exit
-
-# Comando zip: -r (recursivo), arquivo de destino, e "." para todos os arquivos da pasta atual
-zip -r "$DESTINO" .
+tar -czf "$DESTINO" -C "$ORIGEM" .
 
 echo ""
 echo "=========================================="
-echo "BACKUP CONCLUÍDO COM SUCESSO!"
+echo "BACKUP CONCLUIDO COM SUCESSO!"
 echo "Arquivo gerado: $NOME_ARQUIVO"
 echo "=========================================="
-
 ```
 
 ### 3. Permissão e Execução
